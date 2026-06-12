@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply — The 40-Day Pentest Launchpad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        accent: {
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        },
+                        dark: {
+                            950: '#020202',
+                            900: '#0a0a0a',
+                            800: '#111111',
+                            700: '#1a1a1a',
+                            600: '#252525',
+                            500: '#2e2e2e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-green { box-shadow: 0 0 30px rgba(34, 197, 94, 0.2); }
+        select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+    </style>
+</head>
+<body class="bg-dark-950 text-gray-300 font-sans antialiased">
+
+    <!-- Nav -->
+    <nav class="border-b border-dark-600 bg-dark-950">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between h-14 items-center">
+                <a href="mentorship_pro.html" class="font-mono text-white font-bold text-lg tracking-tight">&lt;vasilis/<span class="text-accent-400">&gt;</span></a>
+                <a href="mentorship_pro.html" class="text-sm text-gray-500 hover:text-white transition-colors">&larr; Back to Program</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-2xl mx-auto px-6 lg:px-8">
+            <p class="text-sm font-semibold text-accent-400 font-mono uppercase tracking-widest mb-2">Application</p>
+            <h1 class="text-3xl lg:text-4xl font-bold text-white mb-3">Apply for the Next Cohort</h1>
+            <p class="text-gray-400 mb-10 max-w-lg">
+                Fill out the form below so I can understand where you're coming from and whether this program is the right fit. No commitment yet — just a starting conversation.
+            </p>
+
+            <form id="signupForm" class="space-y-8">
+
+                <!-- Personal Info -->
+                <div class="bg-dark-700 p-6 lg:p-8 rounded-2xl border border-dark-500 space-y-5">
+                    <h2 class="text-lg font-bold text-white">About You</h2>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1.5">First Name <span class="text-accent-400">*</span></label>
+                            <input type="text" name="firstName" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="Vasileios">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1.5">Last Name <span class="text-accent-400">*</span></label>
+                            <input type="text" name="lastName" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="Messinis">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Email <span class="text-accent-400">*</span></label>
+                        <input type="email" name="email" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="you@example.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Phone (optional)</label>
+                        <input type="tel" name="phone" class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="+30 694 090 3286">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">LinkedIn Profile (optional)</label>
+                        <input type="url" name="linkedin" class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="https://linkedin.com/in/your-profile">
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="bg-dark-700 p-6 lg:p-8 rounded-2xl border border-dark-500 space-y-5">
+                    <h2 class="text-lg font-bold text-white">Education</h2>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">University / Institution <span class="text-accent-400">*</span></label>
+                        <input type="text" name="university" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="e.g. University of Patras">
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1.5">Degree <span class="text-accent-400">*</span></label>
+                            <select name="degree" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                                <option value="" disabled selected class="text-gray-600">Select...</option>
+                                <option value="BSc">BSc / Bachelor</option>
+                                <option value="MSc">MSc / Master</option>
+                                <option value="MEng">MEng / Integrated Master</option>
+                                <option value="PhD">PhD</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1.5">Field of Study <span class="text-accent-400">*</span></label>
+                            <input type="text" name="fieldOfStudy" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="e.g. Computer Science">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Current Status <span class="text-accent-400">*</span></label>
+                        <select name="status" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select...</option>
+                            <option value="undergrad-early">Undergraduate (Early Years)</option>
+                            <option value="undergrad-final">Undergraduate (Final Year)</option>
+                            <option value="recent-grad">Recent Graduate (&lt; 1 year)</option>
+                            <option value="grad-1-2">Graduate (1–2 years out)</option>
+                            <option value="career-change">Career Changer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Technical Background -->
+                <div class="bg-dark-700 p-6 lg:p-8 rounded-2xl border border-dark-500 space-y-5">
+                    <h2 class="text-lg font-bold text-white">Technical Background</h2>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Linux Proficiency <span class="text-accent-400">*</span></label>
+                        <select name="linuxLevel" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select your level...</option>
+                            <option value="none">No experience — never used Linux</option>
+                            <option value="beginner">Beginner — basic commands (ls, cd, cat, grep)</option>
+                            <option value="intermediate">Intermediate — comfortable navigating, file permissions, package management, basic scripting</option>
+                            <option value="advanced">Advanced — shell scripting, systemd, networking config, kernel basics</option>
+                            <option value="expert">Expert — daily driver, admin-level, custom tooling</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Programming Proficiency <span class="text-accent-400">*</span></label>
+                        <select name="programmingLevel" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select your level...</option>
+                            <option value="none">No programming experience</option>
+                            <option value="basic">Basic — can write simple scripts (Python, Bash, etc.)</option>
+                            <option value="intermediate">Intermediate — comfortable building small projects</option>
+                            <option value="advanced">Advanced — multiple languages, larger projects</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Networking Knowledge <span class="text-accent-400">*</span></label>
+                        <select name="networkingLevel" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select your level...</option>
+                            <option value="none">No networking knowledge</option>
+                            <option value="basic">Basic — understand IP, ports, DNS at a high level</option>
+                            <option value="intermediate">Intermediate — TCP/IP handshake, routing, firewalls</option>
+                            <option value="advanced">Advanced — packet analysis, protocol-level understanding</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Cybersecurity Exposure <span class="text-accent-400">*</span></label>
+                        <select name="securityExposure" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select your level...</option>
+                            <option value="none">None — purely curious, never tried anything</option>
+                            <option value="dabbled">Dabbled — tried some TryHackMe / HTB rooms</option>
+                            <option value="ctf-regular">CTF Regular — participate in CTFs occasionally</option>
+                            <option value="bug-bounty">Bug Bounty — active on HackerOne / Bugcrowd</option>
+                            <option value="professional">Professional — some work experience in security</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Languages / Frameworks you're comfortable with</label>
+                        <input type="text" name="languages" class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors" placeholder="e.g. Python, JavaScript, C, Bash, React...">
+                    </div>
+                </div>
+
+                <!-- Motivation -->
+                <div class="bg-dark-700 p-6 lg:p-8 rounded-2xl border border-dark-500 space-y-5">
+                    <h2 class="text-lg font-bold text-white">Your Goals</h2>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">What's your primary goal with this program? <span class="text-accent-400">*</span></label>
+                        <select name="primaryGoal" required class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors pr-8">
+                            <option value="" disabled selected class="text-gray-600">Select...</option>
+                            <option value="first-job">Land my first cybersecurity job</option>
+                            <option value="career-pivot">Pivot from another field into security</option>
+                            <option value="skills-gap">Bridge the gap between my degree and practical skills</option>
+                            <option value="interview-prep">Prepare for upcoming security interviews</option>
+                            <option value="general">General skill development and curiosity</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1.5">Anything else I should know?</label>
+                        <textarea name="notes" rows="4" class="w-full bg-dark-600 border border-dark-500 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30 transition-colors resize-y" placeholder="Specific interests, constraints, availability, questions..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="text-center">
+                    <button type="submit" class="px-10 py-4 bg-accent-500 text-dark-950 rounded-lg font-bold text-lg hover:bg-accent-400 transition-all glow-green w-full sm:w-auto">
+                        Submit Application
+                    </button>
+                    <p class="text-xs text-gray-600 mt-4">No payment required. This is just an application to start the conversation.</p>
+                </div>
+            </form>
+
+            <!-- Success State (hidden by default) -->
+            <div id="successState" class="hidden text-center py-16">
+                <div class="w-20 h-20 bg-accent-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-accent-500/20">
+                    <svg class="w-10 h-10 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Application Received.</h2>
+                <p class="text-gray-400 max-w-md mx-auto mb-6">Thanks for applying. I'll review your details and get back to you within a few days to discuss next steps.</p>
+                <a href="mentorship_pro.html" class="text-accent-400 hover:underline text-sm">&larr; Back to Program</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-dark-600 py-10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="font-mono text-gray-600 text-sm">&copy; 2024 Vasileios Messinis</div>
+            <div class="text-gray-700 text-xs max-w-sm text-center md:text-right">
+                Your data is only used to assess fit for the program. Never shared or sold.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Log to console (replace with actual backend POST when ready)
+            console.log('Application submitted:', data);
+
+            // Show success state
+            this.classList.add('hidden');
+            document.getElementById('successState').classList.remove('hidden');
+
+            // Scroll to top of success message
+            document.getElementById('successState').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+
+</body>
+</html>
